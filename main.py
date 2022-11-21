@@ -13,14 +13,11 @@ with open("../../Documents/GITHUB//Mail Merge Automation/Input/Names/invited_nam
     for x in name_content:
         names_with = x.replace("\n", "")
         names.append(names_with)
-print(names)
 
 
     
 #Replace the [name] placeholder with the actual name.
-
-#Save the letters in the folder "ReadyToSend".
-    
-#Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
-    #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
-        #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
+for name in names:
+    letto = content.replace("[name]", name)
+    with open(f"../../Documents/GITHUB/Mail Merge Automation/Output/ReadyToSend/{name}.txt", mode="w") as file:
+        file.write(letto)
